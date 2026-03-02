@@ -5,6 +5,7 @@ import WishlistContext from "../../context/WishlistContext";
 import CartContext from "../../context/CartContext";
 import styles from "./ProductDetail.module.scss";
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
+import ProductCard from "../../components/ProductCard/ProductCard";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -105,6 +106,34 @@ function ProductDetail() {
               <span>Доставка:</span> Безкоштовна від 2000 ₴
             </p>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-16">
+        {/* Схожі товари */}
+        <h2 className="text-2xl font-bold mb-4">Схожі товари</h2>
+        <div className="flex space-x-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+          {mockProducts
+            .filter(
+              (p) => p.category === product.category && p.id !== product.id,
+            )
+            .slice(0, 10)
+            .map((p) => (
+              <div key={p.id} className="flex-none w-60">
+                <ProductCard product={p} />
+              </div>
+            ))}
+        </div>
+
+        {/* Переглядали також */}
+        <h2 className="text-2xl font-bold mt-12 mb-4">Переглядали також</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {mockProducts
+            .filter((p) => p.id !== product.id)
+            .slice(0, 4)
+            .map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
         </div>
       </div>
     </div>
