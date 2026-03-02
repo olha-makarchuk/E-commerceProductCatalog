@@ -1,4 +1,4 @@
-# BlogPlatform
+# E-commerceProductCatalog
 
 ## Опис
 Створити каталог товарів для інтернет-магазину з різними підходами до стилізації. Проєкт має демонструвати використання CSS Modules, Tailwind CSS (або іншого utility-first підходу), Material-UI та традиційного CSS/SCSS в різних частинах додатку.
