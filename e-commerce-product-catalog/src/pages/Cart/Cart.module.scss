@@ -1,0 +1,13 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 0;
+  font-size: 20px;
+  color: gray;
+}

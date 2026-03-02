@@ -1,0 +1,100 @@
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 60px;
+  @media (max-width: 768px) { flex-direction: column; gap: 30px; }
+}
+
+.imageSection {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f9f9f9;
+  
+  img { width: 800px; height: auto; object-fit: cover; }
+}
+
+.infoSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand { color: #999; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; margin-bottom: 8px; }
+.title { font-size: 32px; font-weight: 800; color: #111; margin-bottom: 15px; }
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  margin: 20px 0;
+  
+  .currentPrice { font-size: 28px; font-weight: 900; color: #2563eb; }
+  .oldPrice { text-decoration: line-through; color: #aaa; font-size: 18px; }
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  
+  button {
+    width: 40px; height: 100%; border: none; background: none; cursor: pointer;
+    &:hover { color: #2563eb; }
+  }
+  span { padding: 0 15px; font-weight: 600; }
+}
+
+.addToCartBtn {
+  flex: 1;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  
+  &:hover { background: #2563eb; }
+  &:disabled { background: #ccc; cursor: not-allowed; }
+}
+
+.wishlistBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  transition: 0.3s;
+  
+  svg { width: 24px; }
+  &.active { color: #ef4444; border-color: #ef4444; }
+  &:hover:not(.active) { border-color: #ef4444; color: #ef4444; }
+}
+
+.meta {
+  margin-top: 30px;
+  p { font-size: 14px; color: #666; margin-bottom: 8px; 
+    span { font-weight: 600; color: #111; margin-right: 5px; }
+  }
+}
